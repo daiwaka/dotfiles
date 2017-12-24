@@ -2,7 +2,7 @@ PS1="[${USER}@${HOST%%.*} %1~]%(!.#.$) " # Linux bashと同じ形式
 RPROMPT="%T" # 右側に時間表示
 setopt transient_rprompt # 右側まで入力がきたら時間表示を消す
 setopt prompt_subst # 変数展開など便利なプロント
-export LANG=ja_JP.UTF-8 # 日本語環境
+#export LANG=ja_JP.UTF-8 # 日本語環境
 export EDITOR=vim # エディタはvi
 bindkey -v
 
@@ -12,8 +12,8 @@ colors
 
 # Color at Prompt
 PROMPT="%{${fg[green]}%}%n@%m %{${fg[yellow]}%}%~ %{${fg[red]}%}%# %{${reset_color}%}"
-PROMPT2="%{${fg[yellow]}%} %_ > %{${reset_color}%}"
-SPROMPT="%{${fg[red]}%}correct: %R -> %r ? [n,y,a,e] %{${reset_color}%}"
+PROMPT2="%{${fg[red]}%} %_ > %{${reset_color}%}"
+SPROMPT="%{${fg[yellow]}%}correct: %R -> %r ? [n,y,a,e] %{${reset_color}%}"
 
 # Color at ls
 export LSCOLORS=gxfxcxdxbxegedabagacag
@@ -68,10 +68,12 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 #alias vim=nvim 
-[ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
+export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.plenv/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(pyenv init -)"
 eval "$(plenv init -)"
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
+[ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude

@@ -1,14 +1,15 @@
 syntax on
 filetype indent on
 
-highlight Normal ctermbg=black ctermfg=grey
-highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
-highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
+highlight Comment ctermfg=green
+"highlight Normal ctermbg=black ctermfg=green
+"highlight StatusLine term=none cterm=none ctermfg=black ctermbg=green
+"highlight CursorLine term=none cterm=none ctermfg=none ctermbg=grey
 
 set t_Co=256
 set backspace=start,eol,indent
 set whichwrap=b,s,[,],,~
-set mouse=a
+"set mouse=a
 set nohlsearch
 set cursorline
 set number
@@ -19,10 +20,10 @@ set wildmenu wildmode=list:full
 set runtimepath+=~/.vim/
 set nocompatible
 set nobackup
-set termencoding=utf-8
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
+"set termencoding=utf-8
+"set encoding=utf-8
+"set fileencoding=utf-8
+"set fileencodings=utf-8
 set tabstop=4
 set autoindent
 set expandtab
