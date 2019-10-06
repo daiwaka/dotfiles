@@ -24,14 +24,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # lsがカラー表示になるようエイリアスを設定
 case "${OSTYPE}" in
-darwin*)
+    darwin*)
     # Mac
-    alias ls="ls -GF"
-    ;;
-linux*)
+    alias ls="ls -GF";;
+    linux*)
     # Linux
-    alias ls='ls -F --color'
-    ;;
+    alias ls='ls -F --color';;
 esac
 
 # Complitation
@@ -61,19 +59,19 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey '^R' history-incremental-search-backward
-
 # alias
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-#alias vim=nvim 
-export PATH="$HOME/.pyenv/bin:$PATH"
+#export PATH="$HOME/.linuxbrew/bin:$PATH"
+#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+#export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
+#export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.plenv/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(pyenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(anyenv init -)"
+#eval "$(pyenv init -)"
 eval "$(plenv init -)"
-eval "$(rbenv init -)"
-eval "$(phpenv init -)"
+#eval "$(rbenv init -)"
+#eval "$(phpenv init -)"
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
