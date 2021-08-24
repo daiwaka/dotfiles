@@ -5,6 +5,10 @@ setopt prompt_subst # 変数展開など便利なプロント
 #export LANG=ja_JP.UTF-8 # 日本語環境
 export EDITOR=vim # エディタはvi
 bindkey -v
+alias cat='bat'
+alias ls='exa -lh'
+alias od='hexyl'
+alias ps='procs'
 
 # Color
 autoload colors
@@ -23,14 +27,14 @@ export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # lsがカラー表示になるようエイリアスを設定
-case "${OSTYPE}" in
-    darwin*)
-    # Mac
-    alias ls="ls -GF";;
-    linux*)
-    # Linux
-    alias ls='ls -F --color';;
-esac
+#case "${OSTYPE}" in
+#    darwin*)
+#    # Mac
+#    alias ls="ls -GF";;
+#    linux*)
+#    # Linux
+#    alias ls='ls -F --color';;
+#esac
 
 # Complitation
 autoload -U compinit # 補完機能
@@ -64,14 +68,15 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 #export PATH="$HOME/.linuxbrew/bin:$PATH"
 #export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 #export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-#export PATH="$HOME/.anyenv/bin:$PATH"
-#export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 #export PATH="$HOME/.plenv/bin:$PATH"
-#export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 #export PATH="$HOME/.phpenv/bin:$PATH"
-#eval "$(anyenv init -)"
-#eval "$(pyenv init -)"
+export PATH="$HOME/.hsenv/bin:$PATH"
+export PATH="$HOME/.roswell/bin:$PATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(pyenv init -)"
 #eval "$(plenv init -)"
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 #eval "$(phpenv init -)"
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
